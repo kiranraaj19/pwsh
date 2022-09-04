@@ -3,7 +3,7 @@ Guide + Config files for setting up pwsh and neovim (and other useful modules)
 
 # Results
 
-![image](https://user-images.githubusercontent.com/39441413/188298353-da03f4d9-baba-4bcf-80f7-094c1fcc84e6.png)
+![image](https://user-images.githubusercontent.com/39441413/188305244-0d40c699-11eb-4662-8398-456be4f32269.png)
 
 Powershell setup with modules like oh-my-posh, scoop, z, posh-git, fzf (fuzzy-finder), terminal icons
 
