@@ -5,7 +5,7 @@ Guide + Config files for setting up pwsh and neovim (and other useful modules)
 
 ![image](https://user-images.githubusercontent.com/39441413/188298353-da03f4d9-baba-4bcf-80f7-094c1fcc84e6.png)
 
-Powershell setup with modules like ph-my-posh, scoop, z, posh-git, fzf (fuzzy-finder), terminal icons
+Powershell setup with modules like oh-my-posh, scoop, z, posh-git, fzf (fuzzy-finder), terminal icons
 
 ![image](https://user-images.githubusercontent.com/39441413/188300589-b0b99143-2059-4f03-bc20-c8eeff017398.png)
 
@@ -45,7 +45,7 @@ Now scoop has been installed
 
 Install all modules from your terminal now!
 
-Now install neovim using
+## Installing neovim using
 
 ```
 scoop install neovim
@@ -55,13 +55,13 @@ scoop install neovim
 You can install other useful modules like curl, sudo, fzf using same logic.
 
 
-## Setting up oh-my-posh
+## Setting up oh-my-posh and posh-git
 
-```
-Install-Module -Name oh-my-posh -Scope CurrentUser -Force 
-```
- 
-Has been deprecated
+> **Warning**
+> ```
+> Install-Module -Name oh-my-posh -Scope CurrentUser -Force 
+> ```
+> Has been deprecated
 
 Use scoop to install oh-my-posh (You can use winget also. Your freedom of choice)
 
@@ -70,6 +70,77 @@ scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/downl
 ```
 
 oh-my-posh has been installed!
+
+Similarly download posh-git using this command:
+```
+PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
+```
+
+
+## Changing theme of your powershell
+
+you can find out where your themes are stored by doing
+
+```
+echo "$env:POSH_THEMES_PATH"
+```
+
+Lets make a config file that we will pass to the powershell profile so that it can load this config file before loading.
+
+```
+mkdir .config/powershell
+nvim .config/powershell/user_profile.ps1
+```
+> **Note**
+> .ps1 is used to write powershell commands.
+
+![image](https://user-images.githubusercontent.com/39441413/188301107-91db49c4-2622-45c4-86a9-66579c4bfed4.png)
+> **Note**
+> I have chosen amro.omp.json but you can choose any theme given in [here](https://ohmyposh.dev/docs/themes)
+
+While you are at it, you can also make aliases for a bunch of command, that will make it easy for you to use
+![image](https://user-images.githubusercontent.com/39441413/188301204-6bfe98e0-a271-4a30-9bfc-fdc779cb5570.png)
+
+And utility functions for similar reasons
+![image](https://user-images.githubusercontent.com/39441413/188301223-d99b4cd0-e82a-4160-95f3-65ff3dbde695.png)
+
+Adding this config file to the powershell profile
+
+Execute following command to show where the profile of powershell is stored
+
+```
+echo "$PROFILE"
+```
+
+Open profile in nvim by using the following command
+
+```
+nvim $PROFILE
+```
+
+And add the following Lines.
+
+![image](https://user-images.githubusercontent.com/39441413/188301602-91c93409-1cb9-4068-9258-197d3d675a26.png)
+
+Now when you restart your shell, your config file will be loaded.
+
+## Installing Terminal Icons
+
+Execute this in powershell
+
+```
+Install-Module -Name Terminal-Icons -Repository PSGallery
+```
+
+And add this line to config file to enable Terminal Icons
+
+![image](https://user-images.githubusercontent.com/39441413/188301460-330c2929-4d47-4d98-b33d-f2299bd44a42.png)
+
+
+Result of Terminal Icons.
+
+![image](https://user-images.githubusercontent.com/39441413/188301634-c18ca5eb-cacf-4592-9731-66234e553965.png)
+
 
 
 
