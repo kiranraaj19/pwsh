@@ -45,7 +45,7 @@ Now scoop has been installed
 
 Install all modules from your terminal now!
 
-## Installing neovim using
+## Installing neovim
 
 ```
 scoop install neovim
@@ -140,6 +140,28 @@ And add this line to config file to enable Terminal Icons
 Result of Terminal Icons.
 
 ![image](https://user-images.githubusercontent.com/39441413/188301634-c18ca5eb-cacf-4592-9731-66234e553965.png)
+
+## Installing Fzf and PSFzf for auto completions of paths or commands in pwsh
+
+Check [fzf Github Repo](https://github.com/kelleyma49/PSFzf) to see whats happening, we will use PZfzf Wrapper to extend the extensibility of it to output auto paths and commands on pwsh
+
+
+Install fzf
+
+```
+scoop install fzf
+```
+
+Install PZfzf
+
+```
+Install-Module -Name PSFzf -Scope CurrentUser -Force
+```
+
+Now go to your powershell config in ~/.config/powershell/user_profile.ps1 that you set up and add the following commands
+
+![image](https://user-images.githubusercontent.com/39441413/188545670-eb40f31a-8bd0-418d-af3a-1ecbc3ed49b0.png)
+
 
 
 
